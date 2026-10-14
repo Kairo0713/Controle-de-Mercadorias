@@ -1,0 +1,37 @@
+body { font-family: Arial, sans-serif; margin: 20px; }
+.controles { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid #333; padding: 4px 6px; font-size: 16px; height: 20px; }
+th { background: #ddd; }
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #333;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+}
+
+#btnGerar {
+    background-color: rgb(3, 130, 189);
+    color: white;
+}
+
+.cabecalho h2 { margin: 0; font-size: 16px;}
+.data-info { display: flex; gap: 46px; font-size: 16px; font-weight: bold; }
+@media print {
+  .controles { display: none; }
+  @page { size: A4 portraid; margin: 10mm; }
+  body { margin: 0; }
+  th, td { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .pagina { break-after: page; }
+.pagina:last-child { break-after: auto; }
+}
+table { table-layout: fixed; }
+th:nth-child(1), th:nth-child(4) { width: 9%; }
+th:nth-child(2), th:nth-child(5) { width: 25%; }
+th:nth-child(3), th:nth-child(6) { width: 16%; }
+
+/* divisória mais grossa entre as duas sequências */
+th:nth-child(3), td:nth-child(3) { border-right: 2px solid #333; }
